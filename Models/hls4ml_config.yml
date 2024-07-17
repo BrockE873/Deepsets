@@ -1,0 +1,151 @@
+Backend: Vivado
+ClockPeriod: 2.5
+ClockUncertainty: 12.5%
+HLSConfig:
+  LayerName:
+    Activation_phi1:
+      Precision:
+        result: ufixed<8,0,RND_CONV,SAT,0>
+      Strategy: latency
+      Trace: true
+    Activation_phi2:
+      Precision:
+        result: ufixed<8,0,RND_CONV,SAT,0>
+      Strategy: latency
+      Trace: true
+    Activation_phi3:
+      Precision:
+        result: ufixed<8,0,RND_CONV,SAT,0>
+      Strategy: latency
+      Trace: true
+    Activation_rho2:
+      Precision:
+        result: ufixed<8,0,RND_CONV,SAT,0>
+      Strategy: latency
+      Trace: true
+    Dense_phi1:
+      Precision:
+        bias: fixed<8,1,TRN,WRAP,0>
+        result: ap_fixed<20,9>
+        weight: fixed<8,1,TRN,WRAP,0>
+      Strategy: latency
+      Trace: true
+    Dense_phi1_linear:
+      Precision:
+        result: ap_fixed<20,9>
+      Trace: true
+    Dense_phi2:
+      Precision:
+        bias: fixed<8,1,TRN,WRAP,0>
+        result: ap_fixed<20,9>
+        weight: fixed<8,1,TRN,WRAP,0>
+      Strategy: latency
+      Trace: true
+    Dense_phi2_linear:
+      Precision:
+        result: ap_fixed<20,9>
+      Trace: true
+    Dense_phi3:
+      Precision:
+        bias: fixed<8,1,TRN,WRAP,0>
+        result: ap_fixed<20,9>
+        weight: fixed<8,1,TRN,WRAP,0>
+      Strategy: latency
+      Trace: true
+    Dense_phi3_linear:
+      Precision:
+        result: ap_fixed<20,9>
+      Trace: true
+    Dense_rho2:
+      Precision:
+        bias: fixed<8,1,TRN,WRAP,0>
+        result: ap_fixed<20,9>
+        weight: fixed<8,1,TRN,WRAP,0>
+      Strategy: latency
+      Trace: true
+    Dense_rho2_linear:
+      Precision:
+        result: ap_fixed<20,9>
+      Trace: true
+    avgpool:
+      Precision: ap_fixed<20,9,AP_RND,AP_SAT>
+      Strategy: latency
+      Trace: true
+    batchnorm:
+      Precision: ap_fixed<20,9,AP_RND,AP_SAT>
+      Strategy: latency
+      Trace: true
+      result: ap_fixed<20,9,AP_RND,AP_SAT>
+    inputs:
+      Precision: ap_fixed<20,9,AP_RND,AP_SAT>
+      Strategy: latency
+      Trace: true
+      result: ap_fixed<20,9,AP_RND,AP_SAT>
+    output_class:
+      Implementation: latency
+      Precision:
+        result: ap_fixed<20,9,AP_RND,AP_SAT>
+      Strategy: latency
+      Trace: true
+    qActivationForPool:
+      Precision: ap_fixed<20,9,AP_RND,AP_SAT>
+      Strategy: latency
+      Trace: true
+    qActivation_rho1:
+      Precision:
+        result: ufixed<8,0,RND_CONV,SAT,0>
+      Strategy: latency
+      Trace: true
+    qActivation_rho3:
+      Precision:
+        result: ufixed<8,0,RND_CONV,SAT,0>
+      Strategy: latency
+      Trace: true
+    qDense_rho1:
+      Precision:
+        bias: fixed<8,1,TRN,WRAP,0>
+        result: ap_fixed<20,9>
+        weight: fixed<8,1,TRN,WRAP,0>
+      Strategy: latency
+      Trace: true
+    qDense_rho1_linear:
+      Precision:
+        result: ap_fixed<20,9>
+      Trace: true
+    qDense_rho3:
+      Precision:
+        bias: fixed<8,1,TRN,WRAP,0>
+        result: ap_fixed<20,9>
+        weight: fixed<8,1,TRN,WRAP,0>
+      Strategy: latency
+      Trace: true
+    qDense_rho3_linear:
+      Precision:
+        result: ap_fixed<20,9>
+      Trace: true
+    qDense_rho4:
+      Precision:
+        bias: fixed<8,1,TRN,WRAP,0>
+        result: ap_fixed<20,9>
+        weight: fixed<8,1,TRN,WRAP,0>
+      Strategy: latency
+      Trace: true
+    qDense_rho4_linear:
+      Precision:
+        result: ap_fixed<20,9>
+      Trace: true
+  Model:
+    BramFactor: 1000000000
+    Precision: ap_fixed<20,9>
+    ReuseFactor: 1
+    Strategy: Latency
+    TraceOutput: false
+IOType: io_parallel
+InputData: null
+KerasModel: !keras_model 'Models/keras_model.keras'
+OutputDir: Models
+OutputPredictions: null
+Part: xcu250-figd2104-2L-e
+ProjectName: myproject
+Stamp: b5Ace163
+Version: 1.0.0
